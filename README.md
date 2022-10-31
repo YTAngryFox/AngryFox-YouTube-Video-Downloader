@@ -1,4 +1,4 @@
-* AngryFox's YouTube Video Downloader
+# AngryFox's YouTube Video Downloader
 
 With this open sourced, safe and easy to use tool you can download any video
 from the YouTube platform.

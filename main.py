@@ -1,25 +1,27 @@
 from pytube import YouTube
 import sys
-import colorama
 import os
+from pystyle import Colorate, Colors
 
-colorama.init()
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 print("")
 
-print(colorama.Fore.LIGHTCYAN_EX + """
-\ \   /__ __|      __ \                           |                    |
- \   /    |        |   |  _ \  \ \  \   /  __ \   |   _ \    _` |   _` |   _ \   __|
-    |     |        |   | (   |  \ \  \ /   |   |  |  (   |  (   |  (   |   __/  |
-   _|    _|       ____/ \___/    \_/\_/   _|  _| _| \___/  \__._| \__._| \___| _|
+print(Colorate.Horizontal(Colors.purple_to_red, "                           █████╗ ███╗   ██╗ ██████╗ ██████╗ ██╗   ██╗███████╗ ██████╗ ██╗  ██╗"))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ██╔══██╗████╗  ██║██╔════╝ ██╔══██╗╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝"))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ███████║██╔██╗ ██║██║  ███╗██████╔╝ ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝ "))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ██╔══██║██║╚██╗██║██║   ██║██╔══██╗  ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗ "))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ██║  ██║██║ ╚████║╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝██╔╝ ██╗"))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝"))
 
-""")
+print(Colorate.Diagonal(Colors.purple_to_red, "                                                   Made by AngryFoxYT"))
+print(Colorate.Diagonal(Colors.purple_to_red, "                                                YouTube Video Downloader"))
 
-print(colorama.Fore.RED + "Made by AngryFoxYT")
+print("")
 
-print(colorama.Fore.WHITE + "")
-
-link = input("Enter the youtube video link: ")
+print(Colorate.Diagonal(Colors.purple_to_red, "Enter the youtube link"))
+link = input("")
 
 yt = YouTube(link)
 
@@ -27,22 +29,38 @@ yt.bypass_age_gate()
 
 video = yt.streams.get_highest_resolution()
 
-print("")
-
-print("Title: " + yt.title)
-print("Author: " + yt.author)
+clear()
 
 print("")
 
-yn = input("Is this the video you want to install? (y/n): ")
+print(Colorate.Horizontal(Colors.purple_to_red, "                           █████╗ ███╗   ██╗ ██████╗ ██████╗ ██╗   ██╗███████╗ ██████╗ ██╗  ██╗"))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ██╔══██╗████╗  ██║██╔════╝ ██╔══██╗╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝"))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ███████║██╔██╗ ██║██║  ███╗██████╔╝ ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝ "))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ██╔══██║██║╚██╗██║██║   ██║██╔══██╗  ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗ "))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ██║  ██║██║ ╚████║╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝██╔╝ ██╗"))
+print(Colorate.Horizontal(Colors.purple_to_red, "                          ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝"))
+
+print(Colorate.Diagonal(Colors.purple_to_red, "                                                   Made by AngryFoxYT"))
+print(Colorate.Diagonal(Colors.purple_to_red, "                                                YouTube Video Downloader"))
+
+print("")
+
+print(Colorate.Diagonal(Colors.purple_to_red, "Title: " + yt.title))
+print(Colorate.Diagonal(Colors.purple_to_red, "Author: " + yt.author))
+
+print("")
+
+print(Colorate.Diagonal(Colors.purple_to_red, "Is this the video you want to install? (y/n)"))
+yn = input("")
 
 print("")
 
 if yn == "y":
    os.chdir(".")
-   print("Done...")
+   print(Colorate.Diagonal(Colors.purple_to_red, "Done!"))
    video.download()
+   sys.exit()
 elif yn == "n":
    sys.exit()
 else:
-   print("Invalid option.")
+   print(Colorate.Diagonal(Colors.purple_to_red, "Invalid Option."))
